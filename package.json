@@ -1,0 +1,44 @@
+{
+    "name": "rifkin.dev",
+    "version": "1.0.0",
+    "description": "",
+    "main": "src/main.ts",
+    "type": "module",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "dev": "webpack serve --open --mode=development",
+        "build": "webpack --mode=development",
+        "dist": "webpack --mode=production",
+        "start": "node build/src/main.js",
+        "lint": "eslint src",
+        "lint-files": "eslint --color",
+        "format": "prettier . --write",
+        "format-check": "prettier . --check",
+        "format-files": "prettier . --write --ignore-unknown"
+    },
+    "author": "Jeremy Rifkin",
+    "license": "MIT",
+    "dependencies": {
+        "@types/node": "^22.0.0",
+        "@typescript-eslint/eslint-plugin": "^7.18.0",
+        "@typescript-eslint/parser": "^7.18.0",
+        "css-loader": "^7.1.2",
+        "eslint": "^8.57.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-prettier": "^5.2.1",
+        "file-loader": "^6.2.0",
+        "html-loader": "^5.1.0",
+        "html-webpack-plugin": "^5.6.0",
+        "prettier": "^3.3.3",
+        "sass": "^1.77.8",
+        "sass-loader": "^16.0.0",
+        "style-loader": "^4.0.0",
+        "ts-loader": "^9.5.1",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.5.4",
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^5.0.4"
+    }
+}
