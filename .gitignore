@@ -1,5 +1,7 @@
 .vscode
 .idea
 node_modules
-old
+old-*
 dist
+src/.vitepress/dist
+src/.vitepress/cache
