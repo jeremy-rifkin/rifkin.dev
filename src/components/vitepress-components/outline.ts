@@ -1,9 +1,7 @@
 import { getScrollOffset, Header, onContentUpdated } from "vitepress";
 import type { DefaultTheme } from "vitepress/theme";
 import { onMounted, onUnmounted, onUpdated, type Ref } from "vue";
-// import type { Header } from '../../shared'
 import { throttleAndDebounce } from "./utils";
-import { useAside } from "./aside";
 
 const ignoreRE = /\b(?:VPBadge|header-anchor|footnote-ref|ignore-header)\b/;
 
@@ -75,8 +73,6 @@ export function resolveHeaders(headers: MenuItem[], range?: DefaultTheme.Config[
 }
 
 export function useActiveAnchor(container: Ref<HTMLElement>, marker: Ref<HTMLElement>): void {
-    const { isAsideEnabled } = useAside();
-
     const onScroll = throttleAndDebounce(setActiveLink, 100);
 
     let prevActiveLink: HTMLAnchorElement | null = null;
@@ -117,10 +113,6 @@ export function useActiveAnchor(container: Ref<HTMLElement>, marker: Ref<HTMLEle
     });
 
     function setActiveLink() {
-        if (!isAsideEnabled.value) {
-            return;
-        }
-
         const scrollY = window.scrollY;
         const innerHeight = window.innerHeight;
         const offsetHeight = document.body.offsetHeight;
