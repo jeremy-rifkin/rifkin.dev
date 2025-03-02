@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useData } from 'vitepress';
+import { useData } from "vitepress";
 
 import Post from "../../posts/post.vue";
 import Footer from "../../footer.vue";

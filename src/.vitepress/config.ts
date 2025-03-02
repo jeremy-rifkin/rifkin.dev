@@ -1,5 +1,5 @@
 import { defineConfig } from "vitepress";
-import footnote from 'markdown-it-footnote';
+import footnote from "markdown-it-footnote";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -11,8 +11,8 @@ export default defineConfig({
         lineNumbers: true,
         math: true,
         toc: { level: [1, 2, 3] },
-        config: (md) => {
-            md.use(footnote)
-          },
+        config: md => {
+            md.use(footnote);
+        },
     },
 });

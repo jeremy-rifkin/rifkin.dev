@@ -83,7 +83,7 @@ export function useActiveAnchor(container: Ref<HTMLElement>, marker: Ref<HTMLEle
 
     let minSticky = 172;
     const sticky = () => {
-        if(window.scrollY <= minSticky) {
+        if (window.scrollY <= minSticky) {
             container.value.style.top = minSticky - window.scrollY + "px";
         } else {
             container.value.style.top = "";
@@ -93,7 +93,7 @@ export function useActiveAnchor(container: Ref<HTMLElement>, marker: Ref<HTMLEle
         const contentOffsetTop = document.getElementById("content")?.offsetTop;
         const postTitleOffsetTop = document.getElementById("post-title")?.offsetTop;
         // console.log(contentOffsetTop, postTitleOffsetTop);
-        if(contentOffsetTop !== undefined && postTitleOffsetTop !== undefined) {
+        if (contentOffsetTop !== undefined && postTitleOffsetTop !== undefined) {
             minSticky = contentOffsetTop + postTitleOffsetTop;
         }
         // console.log(minSticky);

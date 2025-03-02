@@ -257,7 +257,7 @@
         border-radius: 8px;
         padding: 16px 16px 8px;
         line-height: 24px;
-        font-size: .875em;
+        font-size: 0.875em;
         color: #67676c;
 
         p {
@@ -288,34 +288,36 @@
             border-radius: 8px 8px 0 0;
         }
 
-        &.info, &.note {
+        &.info,
+        &.note {
             color: #3c3c43;
-            background-color: rgba(142, 150, 170, .14);
+            background-color: rgba(142, 150, 170, 0.14);
         }
 
         &.tip {
             color: #3c3c43;
-            background-color: rgba(100, 108, 255, .14);
+            background-color: rgba(100, 108, 255, 0.14);
         }
 
         &.important {
             color: #3c3c43;
-            background-color: rgba(159, 122, 234, .14);
+            background-color: rgba(159, 122, 234, 0.14);
         }
 
         &.warning {
             color: #3c3c43;
-            background-color: rgba(234, 179, 8, .14);
+            background-color: rgba(234, 179, 8, 0.14);
         }
 
-        &.danger, &.caution {
+        &.danger,
+        &.caution {
             color: #3c3c43;
-            background-color: rgba(244, 63, 94, .14);
+            background-color: rgba(244, 63, 94, 0.14);
         }
 
         &.details {
             color: #3c3c43;
-            background-color: rgba(142, 150, 170, .14);
+            background-color: rgba(142, 150, 170, 0.14);
             summary {
                 margin: 0 0 8px;
                 font-weight: 700;
@@ -390,7 +392,8 @@
         font-family: "Source Code Pro", var(--vp-font-family-mono);
     }
 
-    pre, :not(pre) > code {
+    pre,
+    :not(pre) > code {
         font-size: 0.875em;
         line-height: 1.7;
     }
@@ -680,7 +683,7 @@
         z-index: 1;
         height: 2px;
         border-radius: 2px;
-        content: '';
+        content: "";
         background-color: transparent;
         transition: background-color 0.25s;
     }
@@ -697,7 +700,7 @@
         background-color: #3451b2;
     }
 
-    .vp-code-group div[class*='language-'],
+    .vp-code-group div[class*="language-"],
     .vp-block {
         display: none;
         margin-top: 0 !important;
@@ -705,7 +708,7 @@
         border-top-right-radius: 0 !important;
     }
 
-    .vp-code-group div[class*='language-'].active,
+    .vp-code-group div[class*="language-"].active,
     .vp-block.active {
         display: block;
     }
