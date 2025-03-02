@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useData } from "vitepress";
 
-import VPDocAsideOutline from "../../vendor/vitepress/VPDocAsideOutline.vue";
+import VPDocAsideOutline from "./vitepress-components/VPDocAsideOutline.vue";
 import "./post.scss";
 import pfp_url from "../../assets/pfp.jpg";
 import { date_to_string } from "./utils/utils";
