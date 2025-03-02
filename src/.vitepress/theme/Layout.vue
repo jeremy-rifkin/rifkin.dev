@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { useData } from 'vitepress';
 
-import Footer from '../../footer.vue';
+import Post from "../../posts/post.vue";
+import Footer from "../../footer.vue";
 
 import "../../style.scss";
 
@@ -11,15 +12,14 @@ const { site, page, frontmatter } = useData();
 
 <template>
     <div id="content">
-        <div v-if="page.isNotFound">
-            404
-        </div>
+        <div v-if="page.isNotFound">404</div>
         <div v-else-if="frontmatter.layout == 'page'">
             <Content />
         </div>
-        <div v-else>
-            Internal error: frontmatter.layout = "{{ frontmatter.layout }}"
+        <div v-else-if="frontmatter.layout == 'post' || page.filePath.startsWith('posts/')">
+            <Post />
         </div>
+        <div v-else>Internal error: frontmatter.layout = "{{ frontmatter.layout }}"</div>
     </div>
     <Footer />
 </template>
