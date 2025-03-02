@@ -10,8 +10,11 @@ $(NODE_MODULES): package.json package-lock.json
 	@rm -rf node_modules/.cache/esm/*
 	@touch $@
 
+src/public/favicon.ico: scripts/favicon.sh
+	scripts/favicon.sh
+
 .PHONY: prereqs
-prereqs: $(NODE_MODULES)
+prereqs: $(NODE_MODULES) src/public/favicon.ico
 
 .PHONY: clean
 clean:  ## Cleans up everything

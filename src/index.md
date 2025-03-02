@@ -45,11 +45,3 @@ import pfp_url from '../assets/pfp.jpg';
         Blog <i class="fa-solid fa-chevron-right"></i>
     </a> -->
 </div>
-<footer>
-    <div class="github">
-        <a href="https://github.com/jeremy-rifkin">
-            <font-awesome-icon :icon="['fab', 'github']" /><span class="github-text">Github</span>
-        </a>
-    </div>
-</footer>
-

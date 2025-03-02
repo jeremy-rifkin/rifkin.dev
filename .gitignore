@@ -5,3 +5,4 @@ old-*
 dist
 src/.vitepress/dist
 src/.vitepress/cache
+src/public
