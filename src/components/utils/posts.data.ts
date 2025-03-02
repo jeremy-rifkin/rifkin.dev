@@ -13,7 +13,11 @@ export type PostData = {
 function get_post_data(file: string): PostData {
     const contents = fs.readFileSync(`src/posts/${file}`, "utf-8");
     const frontmatter = fm<Record<string, string>>(contents);
-    return { path: file, title: frontmatter.attributes.title, date: new Date(frontmatter.attributes.date) };
+    return {
+        path: file.replace(/\.md$/g, ""),
+        title: frontmatter.attributes.title,
+        date: new Date(frontmatter.attributes.date),
+    };
 }
 
 declare const data: PostData[];

@@ -15,4 +15,5 @@ export default defineConfig({
             md.use(footnote);
         },
     },
+    cleanUrls: true,
 });
