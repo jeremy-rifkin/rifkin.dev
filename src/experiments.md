@@ -3,7 +3,7 @@ layout: page
 ---
 
 <script setup>
-import './home.scss';
+import './components/home.scss';
 import pfp_url from '../assets/pfp.jpg';
 </script>
 

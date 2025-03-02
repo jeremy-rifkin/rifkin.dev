@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { useData } from "vitepress";
 
-import Post from "../../posts/post.vue";
-import Footer from "../../footer.vue";
+import Post from "./post.vue";
+import Footer from "./footer.vue";
 
-import "../../style.scss";
+import "./style.scss";
 
 // https://vitepress.dev/reference/runtime-api#usedata
 const { site, page, frontmatter } = useData();

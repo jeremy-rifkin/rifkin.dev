@@ -3,7 +3,7 @@ layout: page
 ---
 
 <script setup>
-import './home.scss';
+import './components/home.scss';
 import pfp_url from '../assets/pfp.jpg';
 </script>
 
@@ -41,7 +41,7 @@ import pfp_url from '../assets/pfp.jpg';
         </div>
         <a class="other" href="/experiments">Other stuff <font-awesome-icon :icon="['fas', 'arrow-up-right-from-square']" /></a>
     </div>
-    <!-- <a id="blog-button" href="/blog">
-        Blog <i class="fa-solid fa-chevron-right"></i>
-    </a> -->
+    <a id="blog-button" href="/posts">
+        Blog <font-awesome-icon :icon="['fas', 'chevron-right']" />
+    </a>
 </div>

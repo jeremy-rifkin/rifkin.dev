@@ -4,6 +4,7 @@ import { useData } from "vitepress";
 import VPDocAsideOutline from "../../vendor/vitepress/VPDocAsideOutline.vue";
 import "./post.scss";
 import pfp_url from "../../assets/pfp.jpg";
+import { date_to_string } from "./utils/utils";
 
 const { page, frontmatter } = useData();
 </script>
@@ -16,7 +17,7 @@ const { page, frontmatter } = useData();
         </div>
         <h1 id="post-title">{{ frontmatter.title }}</h1>
         <div id="dateline">
-            {{ frontmatter.date }} |
+            {{ date_to_string(new Date(frontmatter.date)) }} |
             <a :href="`https://github.com/jeremy-rifkin/rifkin.dev/tree/main/src/${page.filePath}`"> Source </a>
         </div>
         <Content />

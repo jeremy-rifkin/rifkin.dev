@@ -25,9 +25,16 @@
         "@fortawesome/free-regular-svg-icons": "^6.7.2",
         "@fortawesome/free-solid-svg-icons": "^6.7.2",
         "@fortawesome/vue-fontawesome": "^3.0.8",
+        "front-matter": "^4.0.2",
         "prettier": "^3.3.3",
         "ts-node": "^10.9.2",
-        "vue": "^3.5.13"
+        "vue": "^3.5.13",
+        "markdown-it-footnote": "^4.0.0",
+        "markdown-it-mathjax3": "^4.3.2",
+        "sass": "^1.85.1",
+        "shiki": "^3.1.0",
+        "typescript": "^5.5.4",
+        "vitepress": "^1.6.3"
     },
     "devDependencies": {
         "@types/node": "^22.0.0",
@@ -35,12 +42,6 @@
         "@typescript-eslint/parser": "^7.18.0",
         "eslint": "^8.57.0",
         "eslint-config-prettier": "^9.1.0",
-        "eslint-plugin-prettier": "^5.2.1",
-        "markdown-it-footnote": "^4.0.0",
-        "markdown-it-mathjax3": "^4.3.2",
-        "sass": "^1.85.1",
-        "shiki": "^3.1.0",
-        "typescript": "^5.5.4",
-        "vitepress": "^1.6.3"
+        "eslint-plugin-prettier": "^5.2.1"
     }
 }
