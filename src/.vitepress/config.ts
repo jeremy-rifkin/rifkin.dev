@@ -6,7 +6,7 @@ export default defineConfig({
     title: "Jeremy Rifkin's Site",
     description: "Jeremy Rifkin's Site",
     outDir: "../dist",
-    head: [["link", { rel: "icon", href: "favicon.ico" }]],
+    head: [["link", { rel: "icon", href: "/favicon.ico" }]],
     markdown: {
         lineNumbers: true,
         math: true,
@@ -16,4 +16,5 @@ export default defineConfig({
         },
     },
     cleanUrls: true,
+    srcExclude: process.env.MODE === "prod" ? ["posts/test.md"] : undefined,
 });

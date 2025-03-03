@@ -15,7 +15,7 @@ const { page, frontmatter } = useData();
         <div id="header">
             <h1><img class="pfp" :src="pfp_url" /> <a href="/posts">Jeremy Rifkin's Blog</a></h1>
         </div>
-        <h1 id="post-title">{{ frontmatter.title }}</h1>
+        <h1 id="post-title">{{ frontmatter.draft ? "[DRAFT] " : "" }}{{ frontmatter.title }}</h1>
         <div id="dateline">
             {{ date_to_string(new Date(frontmatter.date)) }} |
             <a :href="`https://github.com/jeremy-rifkin/rifkin.dev/tree/main/src/${page.filePath}`"> Source </a>
