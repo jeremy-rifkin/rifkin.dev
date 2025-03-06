@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { useData } from "vitepress";
+import { onMounted } from "vue";
+import mermaid from "mermaid";
 
 import VPDocAsideOutline from "./vitepress-components/VPDocAsideOutline.vue";
 import "./post.scss";
@@ -7,6 +9,11 @@ import pfp_url from "../../assets/pfp.jpg";
 import { date_to_string } from "./utils/utils";
 
 const { page, frontmatter } = useData();
+
+mermaid.initialize({ startOnLoad: false });
+onMounted(() => {
+    mermaid.run();
+});
 </script>
 
 <template>
