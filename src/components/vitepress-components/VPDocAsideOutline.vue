@@ -72,7 +72,9 @@ $outline-padding-right: 25px;
     font-weight: 500;
     min-width: $outline-min-width;
     max-width: $outline-max-width;
-    width: calc((100vw - var(--post-width)) / 2 - $outline-padding-left - $outline-position-right - $outline-padding-right);
+    width: calc(
+        (100vw - var(--post-width)) / 2 - $outline-padding-left - $outline-position-right - $outline-padding-right
+    );
 }
 
 .outline-marker {
