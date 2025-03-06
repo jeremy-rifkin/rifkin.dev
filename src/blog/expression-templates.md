@@ -174,7 +174,7 @@ public:
 
 <!-- prettier-ignore -->
 > [!NOTE]
-> I'll be marking all functions as `cosntexpr` herr. This isn't necessary or an optimization, just something we may as
+> I'll be marking all functions as `cosntexpr` here. This isn't necessary or an optimization, just something we may as
 > well do.
 
 We're also going to add a few helper template aliases using function objects from `<functional>`:
