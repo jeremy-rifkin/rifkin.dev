@@ -16,7 +16,7 @@ const { site, page, frontmatter } = useData();
         <div v-else-if="frontmatter.layout == 'page'">
             <Content />
         </div>
-        <div v-else-if="frontmatter.layout == 'post' || page.filePath.startsWith('posts/')">
+        <div v-else-if="frontmatter.layout == 'post' || page.filePath.startsWith('blog/')">
             <Post />
         </div>
         <div v-else>Internal error: frontmatter.layout = "{{ frontmatter.layout }}"</div>

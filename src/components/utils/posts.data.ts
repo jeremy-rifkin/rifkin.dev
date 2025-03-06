@@ -10,14 +10,14 @@ export type PostData = {
     date: Date;
 };
 
-function get_post_data(file: string): PostData & { draft: boolean } {
-    const contents = fs.readFileSync(`src/posts/${file}`, "utf-8");
+function get_post_data(path: string): PostData & { draft: boolean } {
+    const contents = fs.readFileSync(`src/blog/${path}`, "utf-8");
     const frontmatter = fm<Record<string, string | Date | number | boolean>>(contents);
     return {
-        path: file.replace(/\.md$/g, ""),
+        path: path.replace(/\.md$/g, ""),
         title: frontmatter.attributes.title as string,
         date: new Date(frontmatter.attributes.date as Date),
-        draft: frontmatter.attributes.draft as boolean,
+        draft: (frontmatter.attributes.draft as boolean) || path.startsWith("drafts/"),
     };
 }
 
@@ -25,22 +25,27 @@ declare const data: PostData[];
 export { data };
 
 function load(): PostData[] {
-    return fs
-        .readdirSync("src/posts/")
-        .filter(
-            file => file.endsWith(".md") && file !== "index.md" && (process.env.MODE !== "prod" || file !== "test.md"),
-        )
-        .map(file => {
-            console.log(file);
-            return file;
-        })
-        .map(get_post_data)
-        .filter(post => !post.draft)
-        .map(({ path, title, date }) => ({ path, title, date }))
-        .sort((a, b) => b.date.getTime() - a.date.getTime());
+    return (
+        fs
+            .readdirSync("src/blog/", { encoding: "utf-8", recursive: true })
+            .filter(path => !fs.statSync(`src/blog/${path}`).isDirectory())
+            .map(path => path.replaceAll("\\", "/"))
+            .filter(
+                path =>
+                    path.endsWith(".md") && path !== "index.md" && (process.env.MODE !== "prod" || path !== "test.md"),
+            )
+            // .map(path => {
+            //     console.log(path);
+            //     return path;
+            // })
+            .map(get_post_data)
+            .filter(post => !post.draft)
+            .map(({ path, title, date }) => ({ path, title, date }))
+            .sort((a, b) => b.date.getTime() - a.date.getTime())
+    );
 }
 
 export default {
-    watch: path.join("src/posts/", "*.md"),
+    watch: path.join("src/blog/", "*.md"),
     load,
 };

@@ -31,5 +31,5 @@ export default defineConfig({
         },
     },
     cleanUrls: true,
-    srcExclude: ["components", ...(process.env.MODE === "prod" ? ["posts/test.md"] : [])],
+    srcExclude: ["components", ...(process.env.MODE === "prod" ? ["blog/test.md"] : [])],
 });

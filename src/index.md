@@ -42,7 +42,7 @@ import pfp_url from '../assets/pfp.jpg';
         </div>
         <a class="other" href="/experiments">Other stuff <font-awesome-icon :icon="['fas', 'arrow-up-right-from-square']" /></a>
     </div>
-    <a id="blog-button" href="/posts">
+    <a id="blog-button" href="/blog">
         Blog <font-awesome-icon :icon="['fas', 'chevron-right']" />
     </a>
 </div>
