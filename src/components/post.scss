@@ -18,7 +18,7 @@
             border-radius: 100%;
             height: 0.8em;
             width: 0.8em;
-            margin-left: 10px;
+            margin-left: 0px;
             margin-right: 10px;
             transform: scale(1.4);
         }
@@ -724,5 +724,9 @@
     svg.flowchart {
         margin: 0 auto;
         display: block;
+    }
+
+    .footnotes-sep {
+        margin: 48px 0 16px;
     }
 }
