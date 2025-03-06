@@ -344,6 +344,7 @@
         transition:
             color 0.25s,
             background-color 0.5s;
+        overflow-wrap: break-word;
     }
 
     a > code {
