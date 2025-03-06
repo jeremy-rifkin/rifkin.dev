@@ -18,6 +18,15 @@ export default defineConfig({
         ["meta", { property: "og:locale", content: "en" }],
         ["meta", { property: "og:image", content: "https://rifkin.dev/pfp.jpg" }],
         ["meta", { property: "og:url", content: "https://rifkin.dev/" }],
+        ["script", { async: "", src: "https://www.googletagmanager.com/gtag/js?id=G-98NC8HV2GZ" }],
+        [
+            "script",
+            {},
+            `window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-98NC8HV2GZ');`,
+        ],
     ],
     markdown: {
         lineNumbers: true,
