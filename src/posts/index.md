@@ -1,4 +1,5 @@
 ---
+title: Jeremy Rifkin's Blog
 layout: page
 ---
 

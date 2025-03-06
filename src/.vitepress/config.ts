@@ -8,10 +8,17 @@ const llvm_textmate = yaml.parse(fs.readFileSync("vendor/ll.tmLanguage.yaml", "u
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-    title: "Jeremy Rifkin's Site",
-    description: "Jeremy Rifkin's Site",
+    title: "",
+    description: "Jeremy Rifkin's personal site",
+    titleTemplate: ":title",
     outDir: "../dist",
-    head: [["link", { rel: "icon", href: "/favicon.ico" }]],
+    head: [
+        ["link", { rel: "icon", href: "/favicon.ico" }],
+        ['meta', { property: 'og:type', content: 'website' }],
+        ['meta', { property: 'og:locale', content: 'en' }],
+        ['meta', { property: 'og:image', content: 'https://rifkin.dev/pfp.jpg' }],
+        ['meta', { property: 'og:url', content: 'https://rifkin.dev/' }],
+    ],
     markdown: {
         lineNumbers: true,
         math: true,
