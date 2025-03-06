@@ -38,10 +38,16 @@ useActiveAnchor(container, marker);
     </nav>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+$outline-position-right: 20px;
+$outline-min-width: 150px;
+$outline-max-width: 300px;
+$outline-padding-left: 16px;
+$outline-padding-right: 25px;
+
 .VPDocAsideOutline {
     position: fixed;
-    left: calc(50vw + var(--post-width) / 2 + 20px);
+    left: calc(50vw + var(--post-width) / 2 + $outline-position-right);
     top: 30px;
     display: none;
     float: right;
@@ -51,7 +57,8 @@ useActiveAnchor(container, marker);
     display: inline-block;
 }
 
-@media (max-width: calc(840px + 2 * (16px + 150px + 20px))) {
+// todo: constant
+@media (max-width: calc(840px + 2 * ($outline-padding-left + $outline-min-width + $outline-position-right + $outline-padding-right))) {
     .VPDocAsideOutline {
         display: none !important;
     }
@@ -60,10 +67,12 @@ useActiveAnchor(container, marker);
 .content {
     position: relative;
     border-left: 1px solid #e2e2e3; /* var(--vp-c-divider); */
-    padding-left: 16px;
+    padding-left: $outline-padding-left;
     font-size: 13px;
     font-weight: 500;
-    width: 150px;
+    min-width: $outline-min-width;
+    max-width: $outline-max-width;
+    width: calc((100vw - var(--post-width)) / 2 - $outline-padding-left - $outline-position-right - $outline-padding-right);
 }
 
 .outline-marker {
