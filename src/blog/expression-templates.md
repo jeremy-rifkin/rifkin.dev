@@ -9,7 +9,7 @@ date: 2025-03-06
 Not to be confused with `template`, an expression template is an object that represents an expression or computation.
 
 This is a powerful metaprogramming tool because it gives developers complete control over how the computations are
-performed. We could evaluate an expression template any time we want, substitute values, inspect it, or evan transform
+performed. We could evaluate an expression template any time we want, substitute values, inspect it, or even transform
 it. Some common applications of expression templates include lazy evaluation[^wiki], symbolic execution, optimization,
 and introducing new semantic meanings to expressions.
 
