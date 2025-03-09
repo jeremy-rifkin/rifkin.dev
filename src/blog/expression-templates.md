@@ -4,6 +4,7 @@ description:
   Expression templates in C++ are a powerful metaprogramming tool. This post covers practical examples and walks through
   basic ideas and implementation approaches.
 date: 2025-03-06
+updated: 2025-03-09
 ---
 
 Not to be confused with `template`, an expression template is an object that represents an expression or computation.

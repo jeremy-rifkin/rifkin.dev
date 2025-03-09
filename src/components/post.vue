@@ -26,8 +26,11 @@ onMounted(() => {
             {{ frontmatter.draft || page.filePath.startsWith("blog/drafts/") ? "[DRAFT] " : "" }}{{ frontmatter.title }}
         </h1>
         <div id="dateline">
-            {{ date_to_string(new Date(frontmatter.date)) }} |
-            <a :href="`https://github.com/jeremy-rifkin/rifkin.dev/tree/main/src/${page.filePath}`"> Source </a>
+            {{ date_to_string(new Date(frontmatter.date)) }}
+            <span v-if="frontmatter.updated">
+                | Last updated on {{ date_to_string(new Date(frontmatter.updated)) }}
+            </span>
+            | <a :href="`https://github.com/jeremy-rifkin/rifkin.dev/tree/main/src/${page.filePath}`"> Source </a>
         </div>
         <Content />
     </div>
