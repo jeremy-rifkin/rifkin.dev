@@ -1222,3 +1222,5 @@ Expression templates are very useful and extremely powerful metaprogramming tool
 uses from lazy evaluation to introducing new expression semantics to other optimization applications. Implementing
 expression templates can be fairly simple and they can be written in such a way that they don't add run-time overhead. I
 hope this has been interesting in one form or another. Cheers!
+
+*Thanks to Che and Matt Godbolt for reviewing an early draft of this blog*
