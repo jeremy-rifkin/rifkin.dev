@@ -63,15 +63,22 @@ product routine but on a GPU it could be done with a single kernel handling both
 useful way to represent the computation so that that decision can be made. Expression templates could also be used for
 more sophisticated optimization or just-in-time compilation.
 
-Bindings for the Z3 theorem prover in many languages use expression templates to allow users to write constraints
+Bindings for the [Z3][z3] theorem prover in many languages use expression templates to allow users to write constraints
 naturally instead of potentially cumbersome function calls. For example, the following constructs expression templates
 which are passed to Z3's symbolic solver:
+
+[z3]: https://github.com/Z3Prover/z3
 
 ```py
 x = Int('x')
 y = Int('y')
 solve(x > 2, y < 10, x + 2 * y == 7)
 ```
+
+Another fantastic application is [automatic differentiation][autodiff], which is a method for computing derivatives
+based on expression trees that is more accurate than numerical differentiation and faster than symbolic differentiation.
+
+[autodiff]: https://en.wikipedia.org/wiki/Automatic_differentiation
 
 C++20 views are also expression templates and they are evaluated lazily. They are a good example of how expression
 templates can be used to introducing new semantics to operations and of how they can be used with different inputs:
