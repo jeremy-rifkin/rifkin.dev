@@ -50,7 +50,7 @@ In this blog post I'll briefly go over some examples of how expression templates
 implementing a simple expression template that can evaluate an expression with placeholders, such as
 `param_1 * param_2 + param_3`. I'll talk about performance and then I'll showcase how expression templates can be used
 to add chained comparisons to C++ with the syntax `100_chain <= x <= 200`. Familiarity with C++ fundamentals is
-required, however, I have tried to write this in such a way that it is approachable for people with a wide audience.
+required, however, I have tried to write this in such a way that it is approachable for a wide audience.
 
 ## Some Applications
 
