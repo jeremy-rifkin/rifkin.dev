@@ -6,7 +6,7 @@ import mermaid from "mermaid";
 import VPDocAsideOutline from "./vitepress-components/VPDocAsideOutline.vue";
 import "./post.scss";
 import pfp_url from "../../assets/pfp.jpg";
-import { date_to_string } from "./utils/utils";
+import { date_to_string, estimate_minutes_to_read } from "./utils/utils";
 
 const { page, frontmatter } = useData();
 
@@ -27,10 +27,12 @@ onMounted(() => {
         </h1>
         <div id="dateline">
             {{ date_to_string(new Date(frontmatter.date)) }}
-            <span v-if="frontmatter.updated">
-                | Last updated on {{ date_to_string(new Date(frontmatter.updated)) }}
-            </span>
+            | {{ estimate_minutes_to_read(frontmatter.word_count) }} minute read
             | <a :href="`https://github.com/jeremy-rifkin/rifkin.dev/tree/main/src/${page.filePath}`"> Source </a>
+            <template v-if="frontmatter.updated">
+                <br/>
+                Last updated on {{ date_to_string(new Date(frontmatter.updated)) }}
+            </template>
         </div>
         <Content />
     </div>

@@ -1,8 +1,9 @@
-import { defineConfig } from "vitepress";
+import { defineConfig, MarkdownRenderer } from "vitepress";
 import footnote from "markdown-it-footnote";
 import { Highlighter } from "shiki";
 import yaml from "yaml";
 import fs from "fs";
+import { count_words } from "../components/utils/count_words";
 
 const llvm_textmate = yaml.parse(fs.readFileSync("vendor/ll.tmLanguage.yaml", "utf-8"));
 
@@ -35,6 +36,15 @@ export default defineConfig({
         toc: { level: [1, 2, 3] },
         config: md => {
             md.use(footnote);
+            const original_render = md.render;
+            md.render = function(src, env) {
+                const result = original_render.call(this, src, env);
+                if(env.relativePath.startsWith("blog/") && env.relativePath !== "blog/index.md") {
+                    env.frontmatter ??= {};
+                    env.frontmatter.word_count = count_words(md.parse(src, {}));
+                }
+                return result;
+            };
         },
         shikiSetup: async (shiki: Highlighter) => {
             await shiki.loadLanguage(llvm_textmate);

@@ -30,5 +30,11 @@ const months = [
 ];
 
 export function date_to_string(date: Date) {
-    return `${months[date.getUTCMonth()]} ${nth(date.getUTCDate())} ${date.getUTCFullYear()}`;
+    return `${months[date.getUTCMonth()]} ${nth(date.getUTCDate())}, ${date.getUTCFullYear()}`;
+}
+
+export const AVG_WORDS_PER_MINUTE = 225;
+
+export function estimate_minutes_to_read(words: number, wpm = AVG_WORDS_PER_MINUTE) {
+    return Math.ceil(words / wpm);
 }
