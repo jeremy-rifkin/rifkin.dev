@@ -4,6 +4,8 @@ import { Highlighter } from "shiki";
 import yaml from "yaml";
 import fs from "fs";
 import { count_words } from "../components/utils/count_words";
+import { nobr_plugin } from "../components/markdown/nobr-plugin";
+import { mermaid_plugin } from "../components/markdown/mermaid-plugin";
 
 const llvm_textmate = yaml.parse(fs.readFileSync("vendor/ll.tmLanguage.yaml", "utf-8"));
 
@@ -36,10 +38,12 @@ export default defineConfig({
         toc: { level: [1, 2, 3] },
         config: md => {
             md.use(footnote);
+            md.use(nobr_plugin);
+            md.use(mermaid_plugin);
             const original_render = md.render;
-            md.render = function(src, env) {
+            md.render = function (src, env) {
                 const result = original_render.call(this, src, env);
-                if(env.relativePath.startsWith("blog/") && env.relativePath !== "blog/index.md") {
+                if (env.relativePath.startsWith("blog/") && env.relativePath !== "blog/index.md") {
                     env.frontmatter ??= {};
                     env.frontmatter.word_count = count_words(md.parse(src, {}));
                 }

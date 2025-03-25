@@ -149,12 +149,12 @@ be to support the syntax of `param_1 * param_2 + param_3`.
 The first thing we need is a class representing a binary expression. The job of this class is very simple, simply encode
 the following expression tree:
 
-<pre class="mermaid">
+```mermaid
 graph TD
     op
     op --> a
     op --> b
-</pre>
+```
 
 Unlike the very start of this article where I used separate class templates `add` and `mul` for the sake of simplicity,
 here we're going to use a function object[^fobj] as a template parameter which will encode the operation.
@@ -574,7 +574,7 @@ To evaluate a given `binary_expr` there are four cases to consider:
 
 Let's consider an expression template representing `a <= b <= c == d <= e <= f`. This expression has a parse tree of:
 
-<pre class="mermaid">
+```mermaid
 graph TD
     eq["=="]
     lt1["<="]
@@ -591,7 +591,7 @@ graph TD
     lt3 --> f
     lt4 --> d
     lt4 --> e
-</pre>
+```
 
 We'll start with considering a `binary_expr` representing the root `==` in the expression. It has to do two things: It
 has to check `c == d` and it has to check the rest of the chained expression. Checking `c == d` requires us to
@@ -1231,4 +1231,4 @@ uses from lazy evaluation to introducing new expression semantics to other optim
 expression templates can be fairly simple and they can be written in such a way that they don't add run-time overhead. I
 hope this has been interesting in one form or another. Cheers!
 
-*Thanks to Che and Matt Godbolt for reviewing an early draft of this blog*
+_Thanks to Che and Matt Godbolt for reviewing an early draft of this blog_

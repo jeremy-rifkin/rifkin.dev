@@ -15,7 +15,8 @@
         "format-files": "prettier . --write --ignore-unknown",
         "dev": "cross-env MODE=dev vitepress dev src",
         "build": "cross-env MODE=prod vitepress build src",
-        "preview": "cross-env MODE=prod vitepress preview src"
+        "preview": "cross-env MODE=prod vitepress preview src",
+        "test": "vitest run"
     },
     "author": "Jeremy Rifkin",
     "license": "MIT",
@@ -45,6 +46,8 @@
         "cross-env": "^7.0.3",
         "eslint": "^8.57.0",
         "eslint-config-prettier": "^9.1.0",
-        "eslint-plugin-prettier": "^5.2.1"
+        "eslint-plugin-prettier": "^5.2.1",
+        "markdown-it": "^14.1.0",
+        "vitest": "^3.0.9"
     }
 }

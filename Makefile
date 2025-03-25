@@ -27,3 +27,11 @@ dev: prereqs ## Runs the site as a developer; including live reload support and 
 .PHONY: build
 build: prereqs ## Builds the website
 	npm run build
+
+.PHONY: format
+format: prereqs ## Formats code
+	npm run format
+
+.PHONY: test
+test: prereqs ## runs tests
+	npm run test
