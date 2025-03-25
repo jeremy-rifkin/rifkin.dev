@@ -12,11 +12,11 @@ export type PostData = {
 
 function get_post_data(path: string): PostData & { draft: boolean } {
     const contents = fs.readFileSync(`src/blog/${path}`, "utf-8");
-    const frontmatter = fm<Record<string, string | Date | number | boolean>>(contents);
+    const frontmatter = fm<Record<string, string | Date | number | boolean | undefined | null>>(contents);
     return {
         path: path.replace(/\.md$/g, ""),
-        title: frontmatter.attributes.title as string,
-        date: new Date(frontmatter.attributes.date as Date),
+        title: frontmatter.attributes.title as string | undefined ?? path,
+        date: new Date(frontmatter.attributes.date as Date ?? 0),
         draft: (frontmatter.attributes.draft as boolean) || path.startsWith("drafts/"),
     };
 }
@@ -39,8 +39,8 @@ function load(): PostData[] {
             //     return path;
             // })
             .map(get_post_data)
-            .filter(post => !post.draft)
-            .map(({ path, title, date }) => ({ path, title, date }))
+            .filter(post => process.env.MODE === "dev" || !post.draft)
+            .map(({ path, title, date, draft }) => ({ path, title: draft ? `[DRAFT] ${title}` : title, date }))
             .sort((a, b) => b.date.getTime() - a.date.getTime())
     );
 }
